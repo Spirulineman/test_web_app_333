@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire Eleve{% endblock %}
+
+{% block body %}
+    {{form_start(form)}}
+        {{form_row(form.nom)}}
+        {{form_row(form.prenom)}}
+        {{form_row(form.dateNaissance)}}
+        {{form_row(form.moyenne)}}
+        {{form_row(form.save)}}
+    {{form_end(form)}}
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Afficher les Eleve{% endblock %}
+
+{% block body %}
+	<div class='eleve'>
+		<span></span>
+		<span>Nom</span>
+		<span>Pr&eacute;nom</span>
+		<span>date de naissance</span>
+		<span>moyenne</span>
+		<div>
+			{%for eleve in eleves%}
+				<div class='eleve'>
+					<span>
+						<a href="{{path('update_eleve', {id:eleve.id} )}}">Modifier l'élève</a>
+
+					</span>
+					<span>{{eleve.nom}}</span>
+					<span>{{eleve.prenom}}</span>
+					<span>{{eleve.dateNaissance | date ('d/m/Y')}}</span>
+					<span>{{eleve.moyenne}}</span>
+					<div>
+						{% endfor %}
+							<a href={{path('create_eleve')}}>Nouvel élève</a>
+
+					{% endblock %}
+
